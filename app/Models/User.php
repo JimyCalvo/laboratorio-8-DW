@@ -95,4 +95,12 @@ class User extends Authenticatable
      {
          return $this->belongsToMany(Type::class)->withTimestamps();
      }
+
+     //----------------Relación Polimórfica uno a uno----------------------
+    
+    public function image()
+    {
+        return $this->MorphOne(Image::class, 'imageable');
+    }
+    
 }
